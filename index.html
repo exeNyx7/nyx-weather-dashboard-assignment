@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NyxWeather - Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="media-queries.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="side-menu">
+        <div class="logo">NyxWeather</div>
+        <ul>
+          <li><a href="#" class="active">Dashboard</a></li>
+          <li><a href="tables.html">Tables</a></li>
+        </ul>
+      </nav>
+      <main>
+        <header>
+          <div class="search-container">
+            <input type="text" placeholder="Enter city name" id="cityInput" />
+            <button id="searchBtn">Search</button>
+          </div>
+          <button id="locationBtn">Current Location</button>
+          <button id="tempToggleBtn">°C / °F</button>
+          <button id="profileBtn"></button>
+        </header>
+        <div id="loading-spinner" class="spinner"></div>
+        <section id="weather-widget" class="widget">
+          <h2 id="city-name">City Name</h2>
+          <div class="weather-info">
+            <div class="temperature">22°C</div>
+            <div class="description">Partly Cloudy</div>
+
+            <div class="details">
+              <span>Humidity: 60%</span>
+              <span>Wind: 5 km/h</span>
+            </div>
+          </div>
+        </section>
+        <section id="charts" class="widget-row">
+          <div class="chart-container">
+            <canvas id="temperatureChart"></canvas>
+          </div>
+          <div class="chart-container">
+            <canvas id="conditionsChart"></canvas>
+          </div>
+          <div class="chart-container">
+            <canvas id="forecastChart"></canvas>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div id="profile-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-profile-btn" class="close">&times;</span>
+        <img
+          id="profile-picture"
+          src="./assests/my-circle-profile-picture.png"
+          alt="Profile Picture"
+        />
+        <h2 id="profile-name">Dawood Qamar</h2>
+        <p id="profile-email">i222522@nu.edu.pk</p>
+      </div>
+    </div>
+    <footer>
+      <p>&copy; 2024 NyxWeather. All rights reserved.</p>
+    </footer>
+    <script src="./js/config.js"></script>
+    <script src="./js/weather.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="/firebase.js"></script>
+  </body>
+</html>
